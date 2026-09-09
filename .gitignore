@@ -1,0 +1,8 @@
+# R
+.Rhistory
+.RData
+
+# Quarto temporary/cache files
+.quarto/
+*_cache/
+_cache/

@@ -1,0 +1,20 @@
+---
+title: "Laith Saeed"
+about:
+  template: jolla
+  image: images/milestone_pic.jpg
+
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+
+
+# Bio
+
+My name is Laith Saeed.I am originally from Jordan and a chemical engineering graduate from the University of Ottawa's class of 2018.
+
+A majority of my experience has been in account and project management in the FinTech sector. I am attending the MDS V program in order to help me land a technical role (Data Scientist , ML Engineer, AI Researcher etc.)
+

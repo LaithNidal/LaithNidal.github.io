@@ -1,0 +1,14 @@
+---
+title: "About"
+---
+
+### Background
+I grew up in Saudi Arabia where I attended international schools. I graduated from the University of Ottawa's chemical engineering program with an option in Business Management and Entrepreneurship. I worked as an account/project manager primarily prior to attending UBC's MDS program.
+
+### Why Data Science
+The utilization of Data across so many fields has been something that has been of great interest to me. The hype and bulging AI bubble is also a huge motivator for me to take the gamble and attend the program.
+
+### Outside of Data Science
+I enjoy mixed martial arts(MMA), watching movies as well as lifting weights and most importantly comic books.
+
+

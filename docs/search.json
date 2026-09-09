@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "Orientation day on campus.\n\n\nMy first week in the UBC Master of Data Science (MDS) Vancouver program has been an exciting introduction to what promises to be an intense and rewarding year. The first few days focused on getting familiar with the program, meeting my classmates and instructors, and adjusting to the pace of the coursework. There is already a lot to learn, but it has been great to finally begin the program and start working with the tools and concepts that will form the foundation of the months ahead.\nDuring the first week, we began working across several areas of data science, including programming, statistics, data manipulation, and version control. I have been getting more comfortable working with Python and R while also learning how Git and GitHub fit into a collaborative data science workflow. The hands-on labs and assignments have made it clear that the program will require a lot of practice and problem-solving rather than simply learning concepts in isolation.\nOverall, my first week at UBC MDS has been challenging but encouraging. There have already been moments where I have had to troubleshoot code, learn unfamiliar tools, and rethink concepts that initially seemed confusing. At the same time, each problem I solve makes me a little more comfortable with the data science workflow. This is only the beginning, and I am looking forward to seeing how much my technical skills and understanding of data science develop throughout the program."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Laith Saeed",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nBio\nMy name is Laith Saeed.I am originally from Jordan and a chemical engineering graduate from the University of Ottawa’s class of 2018.\nA majority of my experience has been in account and project management in the FinTech sector. I am attending the MDS V program in order to help me land a technical role (Data Scientist , ML Engineer, AI Researcher etc.)"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\nLaith Saeed\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Background\nI grew up in Saudi Arabia where I attended international schools. I graduated from the University of Ottawa’s chemical engineering program with an option in Business Management and Entrepreneurship. I worked as an account/project manager primarily prior to attending UBC’s MDS program.\n\n\nWhy Data Science\nThe utilization of Data across so many fields has been something that has been of great interest to me. The hype and bulging AI bubble is also a huge motivator for me to take the gamble and attend the program.\n\n\nOutside of Data Science\nI enjoy mixed martial arts(MMA), watching movies as well as lifting weights and most importantly comic books."
+  }
+]
