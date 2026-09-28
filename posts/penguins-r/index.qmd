@@ -1,0 +1,81 @@
+---
+title: "Palmer Penguins Analysis with R"
+author: "Laith Saeed"
+date: "2026-09-28"
+---
+
+## Exploring the Palmer Penguins Dataset
+
+This post explores differences in body mass and flipper length among penguin species using R.
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/), Palmer Station Antarctica LTER.
+
+
+
+```{r}
+#| message: false
+#| warning: false
+
+library(palmerpenguins)
+library(ggplot2)
+library(dplyr)
+```
+
+
+### EDA of Dataset and Aggregating
+```{r}
+penguins |> 
+    head()
+```
+
+
+
+```{r}
+species_summary <- penguins |>
+   dplyr :: group_by(species) |>
+   dplyr :: summarise(
+        avg_body_mass = mean(body_mass_g, na.rm = TRUE),
+        avg_flipper_length = mean(flipper_length_mm, na.rm = TRUE)
+    )
+
+species_summary
+```
+
+### Body Mass by Species
+
+
+
+```{r}
+#| label: fig-r-body-mass
+#| fig-cap: "Average body mass of Palmer penguins by species."
+
+ggplot(species_summary, aes(x = species, y = avg_body_mass)) +
+    geom_col() +
+    labs(
+        x = "Species",
+        y = "Average Body Mass (g)",
+        title = "Average Body Mass by Species"
+    )
+```
+Genboo is heaviest on average then tie between Chinstrap and Adelie.
+
+
+### Flipper Length and Body Mass
+
+
+```{r}
+#| label: fig-r-flipper-mass
+#| fig-cap: "Relationship between flipper length and body mass in Palmer penguins."
+
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+    geom_point() +
+    labs(
+        x = "Flipper Length (mm)",
+        y = "Body Mass (g)",
+        title = "Flipper Length vs Body Mass"
+    )
+```
+
+The scatterplot shows a positive association between body mass and flipper length. Penguins with longer flippers generally have greater body mass.
+
+

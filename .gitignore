@@ -8,10 +8,17 @@
 _cache/
 
 
-# venv 
+# venv
 .venv/
 _site/
 .DS_Store
 
-#Log Files 
+#Log Files
 snowflake.log
+
+/.quarto/
+**/*.quarto_ipynb
+
+# renv local library
+renv/library/
+renv/staging/
