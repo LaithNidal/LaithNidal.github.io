@@ -6,3 +6,9 @@
 .quarto/
 *_cache/
 _cache/
+
+
+# venv 
+.venv/
+_site/
+.DS_Store
