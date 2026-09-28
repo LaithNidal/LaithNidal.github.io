@@ -1,0 +1,74 @@
+---
+title: "Palmer Penguins Analysis with Python"
+author: "Laith Saeed"
+date: "2026-09-28"
+---
+
+
+## Exploring the Palmer Penguins dataset
+This post is to practice skills learned in DSCI 521 including github pages, uv, renv and venv as well as quatro. 
+
+This post explores differences in body mass and flipper length among penguin species.
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/), Palmer Station Antarctica LTER.
+```{python}
+#| message: false
+#| warning: false
+import pandas as pd
+import matplotlib.pyplot as plt 
+from palmerpenguins import load_penguins
+```
+
+### EDA of Dataset and Aggregating
+
+```{python}
+df_peng = load_penguins()
+df_peng.head()
+
+#grouping by species to investigate flipper length and body mass 
+species_summary = df_peng.groupby("species").agg(
+    avg_body_mass = ("body_mass_g", "mean"),
+    avg_flipper_length = ("flipper_length_mm", "mean")
+).reset_index()
+```
+
+### Body Mass by Species 
+```{python}
+
+
+#| label: fig-body-mass
+#| fig-cap: "Average body mass of Palmer penguins by species."
+
+species_summary.plot(
+    x="species",
+    y="avg_body_mass",
+    kind="bar"
+)
+
+plt.ylabel("Average Body Mass (g)")
+plt.xlabel("Species")
+plt.title("Avg Body Mass by Species")
+plt.show()
+```
+
+Gentoo are heaviest species on average while Adelie and Chinstrap are tied. 
+
+
+#Flipper Length and Body Mass Correlation
+```{python}
+#| label: fig-flipper-mass
+#| fig-cap: "Relationship between flipper length and body mass in Palmer penguins."
+
+plt.scatter(
+    df_peng["flipper_length_mm"],
+    df_peng["body_mass_g"]
+)
+
+plt.xlabel("Flipper Length (mm)")
+plt.ylabel("Body Mass (g)")
+plt.title("Avg Flipper Length vs Body Mass")
+plt.show()
+```
+
+
+According to plot 2 body mass and flipper length are postively correlated. 

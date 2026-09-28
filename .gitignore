@@ -12,3 +12,6 @@ _cache/
 .venv/
 _site/
 .DS_Store
+
+#Log Files 
+snowflake.log

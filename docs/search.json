@@ -1,10 +1,31 @@
 [
   {
-    "objectID": "posts/first-weeks/index.html",
-    "href": "posts/first-weeks/index.html",
-    "title": "My first weeks in MDS",
+    "objectID": "posts/penguins-python/index.html",
+    "href": "posts/penguins-python/index.html",
+    "title": "Palmer Penguins Analysis with Python",
     "section": "",
-    "text": "Orientation day on campus.\n\n\nMy first week in the UBC Master of Data Science (MDS) Vancouver program has been an exciting introduction to what promises to be an intense and rewarding year. The first few days focused on getting familiar with the program, meeting my classmates and instructors, and adjusting to the pace of the coursework. There is already a lot to learn, but it has been great to finally begin the program and start working with the tools and concepts that will form the foundation of the months ahead.\nDuring the first week, we began working across several areas of data science, including programming, statistics, data manipulation, and version control. I have been getting more comfortable working with Python and R while also learning how Git and GitHub fit into a collaborative data science workflow. The hands-on labs and assignments have made it clear that the program will require a lot of practice and problem-solving rather than simply learning concepts in isolation.\nOverall, my first week at UBC MDS has been challenging but encouraging. There have already been moments where I have had to troubleshoot code, learn unfamiliar tools, and rethink concepts that initially seemed confusing. At the same time, each problem I solve makes me a little more comfortable with the data science workflow. This is only the beginning, and I am looking forward to seeing how much my technical skills and understanding of data science develop throughout the program."
+    "text": "This post is to practice skills learned in DSCI 521 including github pages, uv, renv and venv as well as quatro.\nThis post explores differences in body mass and flipper length among penguin species.\nData: Palmer Penguins, Palmer Station Antarctica LTER.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt \nfrom palmerpenguins import load_penguins\n\n\n\n\ndf_peng = load_penguins()\ndf_peng.head()\n\n#grouping by species to investigate flipper length and body mass \nspecies_summary = df_peng.groupby(\"species\").agg(\n    avg_body_mass = (\"body_mass_g\", \"mean\"),\n    avg_flipper_length = (\"flipper_length_mm\", \"mean\")\n).reset_index()\n\n\n\n\n\nspecies_summary.plot(\n    x=\"species\",\n    y=\"avg_body_mass\",\n    kind=\"bar\"\n)\n\nplt.ylabel(\"Average Body Mass (g)\")\nplt.xlabel(\"Species\")\nplt.title(\"Avg Body Mass by Species\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Average body mass of Palmer penguins by species.\n\n\n\n\n\nGentoo are heaviest species on average while Adelie and Chinstrap are tied.\n#Flipper Length and Body Mass Correlation\n\nplt.scatter(\n    df_peng[\"flipper_length_mm\"],\n    df_peng[\"body_mass_g\"]\n)\n\nplt.xlabel(\"Flipper Length (mm)\")\nplt.ylabel(\"Body Mass (g)\")\nplt.title(\"Avg Flipper Length vs Body Mass\")\nplt.show()\n\n\n\n\n\n\n\nFigure 2: Relationship between flipper length and body mass in Palmer penguins.\n\n\n\n\n\nAccording to plot 2 body mass and flipper length are postively correlated."
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#exploring-the-palmer-penguins-dataset",
+    "href": "posts/penguins-python/index.html#exploring-the-palmer-penguins-dataset",
+    "title": "Palmer Penguins Analysis with Python",
+    "section": "",
+    "text": "This post is to practice skills learned in DSCI 521 including github pages, uv, renv and venv as well as quatro.\nThis post explores differences in body mass and flipper length among penguin species.\nData: Palmer Penguins, Palmer Station Antarctica LTER.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt \nfrom palmerpenguins import load_penguins\n\n\n\n\ndf_peng = load_penguins()\ndf_peng.head()\n\n#grouping by species to investigate flipper length and body mass \nspecies_summary = df_peng.groupby(\"species\").agg(\n    avg_body_mass = (\"body_mass_g\", \"mean\"),\n    avg_flipper_length = (\"flipper_length_mm\", \"mean\")\n).reset_index()\n\n\n\n\n\nspecies_summary.plot(\n    x=\"species\",\n    y=\"avg_body_mass\",\n    kind=\"bar\"\n)\n\nplt.ylabel(\"Average Body Mass (g)\")\nplt.xlabel(\"Species\")\nplt.title(\"Avg Body Mass by Species\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Average body mass of Palmer penguins by species.\n\n\n\n\n\nGentoo are heaviest species on average while Adelie and Chinstrap are tied.\n#Flipper Length and Body Mass Correlation\n\nplt.scatter(\n    df_peng[\"flipper_length_mm\"],\n    df_peng[\"body_mass_g\"]\n)\n\nplt.xlabel(\"Flipper Length (mm)\")\nplt.ylabel(\"Body Mass (g)\")\nplt.title(\"Avg Flipper Length vs Body Mass\")\nplt.show()\n\n\n\n\n\n\n\nFigure 2: Relationship between flipper length and body mass in Palmer penguins.\n\n\n\n\n\nAccording to plot 2 body mass and flipper length are postively correlated."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Background\nI grew up in Saudi Arabia where I attended international schools. I graduated from the University of Ottawa’s chemical engineering program with an option in Business Management and Entrepreneurship. I worked as an account/project manager primarily prior to attending UBC’s MDS program.\n\n\nWhy Data Science\nThe utilization of Data across so many fields has been something that has been of great interest to me. The hype and bulging AI bubble is also a huge motivator for me to take the gamble and attend the program.\n\n\nOutside of Data Science\nI enjoy mixed martial arts(MMA), watching movies as well as lifting weights and most importantly comic books."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Palmer Penguins Analysis with Python\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nLaith Saeed\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\nLaith Saeed\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -14,17 +35,10 @@
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nBio\nMy name is Laith Saeed.I am originally from Jordan and a chemical engineering graduate from the University of Ottawa’s class of 2018.\nA majority of my experience has been in account and project management in the FinTech sector. I am attending the MDS V program in order to help me land a technical role (Data Scientist , ML Engineer, AI Researcher etc.)"
   },
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
     "section": "",
-    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\nLaith Saeed\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Background\nI grew up in Saudi Arabia where I attended international schools. I graduated from the University of Ottawa’s chemical engineering program with an option in Business Management and Entrepreneurship. I worked as an account/project manager primarily prior to attending UBC’s MDS program.\n\n\nWhy Data Science\nThe utilization of Data across so many fields has been something that has been of great interest to me. The hype and bulging AI bubble is also a huge motivator for me to take the gamble and attend the program.\n\n\nOutside of Data Science\nI enjoy mixed martial arts(MMA), watching movies as well as lifting weights and most importantly comic books."
+    "text": "Orientation day on campus.\n\n\nMy first week in the UBC Master of Data Science (MDS) Vancouver program has been an exciting introduction to what promises to be an intense and rewarding year. The first few days focused on getting familiar with the program, meeting my classmates and instructors, and adjusting to the pace of the coursework. There is already a lot to learn, but it has been great to finally begin the program and start working with the tools and concepts that will form the foundation of the months ahead.\nDuring the first week, we began working across several areas of data science, including programming, statistics, data manipulation, and version control. I have been getting more comfortable working with Python and R while also learning how Git and GitHub fit into a collaborative data science workflow. The hands-on labs and assignments have made it clear that the program will require a lot of practice and problem-solving rather than simply learning concepts in isolation.\nOverall, my first week at UBC MDS has been challenging but encouraging. There have already been moments where I have had to troubleshoot code, learn unfamiliar tools, and rethink concepts that initially seemed confusing. At the same time, each problem I solve makes me a little more comfortable with the data science workflow. This is only the beginning, and I am looking forward to seeing how much my technical skills and understanding of data science develop throughout the program."
   }
 ]
