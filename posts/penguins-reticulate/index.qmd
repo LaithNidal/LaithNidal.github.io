@@ -1,0 +1,77 @@
+---
+title: "Palmer Penguins with R and Python"
+author: "Laith Saeed"
+date: "2026-09-28"
+---
+
+## Combining R and Python
+
+This post demonstrates interoperability between R and Python using `reticulate`. R is used to create a summary of the Palmer Penguins dataset, and the resulting object is passed to Python for further analysis.
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/), Palmer Station Antarctica LTER.
+
+
+
+```{r}
+#| message: false
+#| warning: false
+
+library(palmerpenguins)
+library(dplyr)
+library(reticulate)
+```
+
+
+
+```{r}
+species_summary <- penguins |>
+    group_by(species) |>
+    summarise(
+        avg_body_mass = mean(body_mass_g, na.rm = TRUE),
+        avg_flipper_length = mean(flipper_length_mm, na.rm = TRUE)
+    )
+
+species_summary
+```
+
+## Passing the R Summary to Python
+
+The `species_summary` object was created in R. The following Python code accesses this R object using `reticulate` and uses it for further analysis.
+
+
+```{python}
+import matplotlib.pyplot as plt
+
+summary_python = r.species_summary
+
+summary_python
+```
+
+```{python}
+#| label: fig-reticulate-body-mass
+#| fig-cap: "Average body mass plotted in Python using summary data created in R."
+
+plt.bar(
+    summary_python["species"],
+    summary_python["avg_body_mass"]
+)
+
+plt.xlabel("Species")
+plt.ylabel("Average Body Mass (g)")
+plt.title("R Summary Visualized with Python")
+plt.show()
+```
+
+```{r}
+#| label: fig-r-flipper-mass
+#| fig-cap: "Relationship between flipper length and body mass in Palmer penguins."
+
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+    geom_point() +
+    labs(
+        x = "Flipper Length (mm)",
+        y = "Body Mass (g)",
+        title = "Flipper Length vs Body Mass"
+    )
+
+    The scatterplot shows a positive association between body mass and flipper length. Penguins with longer flippers generally have greater body mass.
